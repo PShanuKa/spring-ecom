@@ -32,27 +32,23 @@ public class User {
 
     // --- profile ---------------------------------------------------------
 
-    @NotBlank(message = "First name is required")
-    @Size(max = 100, message = "First name should not exceed 100 characters")
+
     @Column(name = "first_name", nullable = false, length = 100)
     private String firstName;
 
-    @NotBlank(message = "Last name is required")
-    @Size(max = 100, message = "Last name should not exceed 100 characters")
+ 
     @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
 
-    @NotBlank(message = "Email is required")
-    @Email(message = "Email should be valid")
-    @Size(max = 255, message = "Email should not exceed 255 characters")
+  
     @Column(name = "email", nullable = false, unique = true, length = 255) // nullable=false සහ unique=true එකතු කළා
     private String email;
 
-    @Size(max = 20, message = "Phone number should not exceed 20 characters")
+  
     @Column(name = "phone_number", length = 20)
     private String phoneNumber;
 
-    @Size(max = 500, message = "Avatar URL should not exceed 500 characters")
+
     @Column(name = "avatar_url", length = 500)
     private String avatarUrl;
 
